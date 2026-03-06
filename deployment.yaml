@@ -19,8 +19,5 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "500m"
-     ports:
-       - protocol: TCP
-          port: 8090        # external port (browser access)
-          targetPort: 8080  # containerPort inside pods
-            
+          ports:
+            - containerPort: 8080   # container listens on 8080

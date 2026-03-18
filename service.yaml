@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: register-app-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: register-app
   ports:
-    - protocol: TCP
-      port: 8090        # external port (browser access)
-      targetPort: 8080  # containerPort inside pods
+    - port: 8090        # port du service
+      targetPort: 8080  # port sur le pod
+      nodePort: 32219
